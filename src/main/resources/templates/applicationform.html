@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Franchise Application Form</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+<script src="/js/app.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="/css/styles.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body ng-app="FranchiseApplicationForm"
+	ng-controller="ApplicationFormController">
+	<div class="container">
+		<h1>Franchise Application Form</h1>
+		<a class="btn btn-primary" href="/applications" role="button">View Applications</a>
+
+		<form name="applicationForm">
+			<div class="form-group">
+				<table class="table table-bordered table-hover">
+					<tr>
+						<td><label>Applicants Name</label></td>
+						<td><input class="form-control" type="text"
+							ng-model="applicationForm.applicantsName" required/></td>
+					</tr>
+					<tr>
+						<td><label>ID Number</label></td>
+						<td><input class="form-control" type="number"
+							ng-model="applicationForm.idNumber" required/></td>
+					</tr>
+					<tr>
+						<td><label>Birth Date</label></td>
+						<td><input class="form-control" type="date"
+							ng-model="applicationForm.birthDate" required/></td>
+					</tr>
+					<tr>
+						<td><label>Contact Address</label></td>
+						<td><textarea class="form-control"
+							ng-model="applicationForm.contactAddress"></textarea></td>
+					</tr>
+					<tr>
+						<td><label>Contact Phone</label></td>
+						<td><input class="form-control" type="number"
+							ng-model="applicationForm.contactPhone" required/></td>
+					</tr>
+					<tr>
+						<td><label>Contact Email</label></td>
+						<td><input class="form-control" type="email"
+							ng-model="applicationForm.contactEmail" required/></td>
+					</tr>
+					<tr>
+						<td><label>Describe your previous experience about Food & Beverage
+							business</label></td>
+						<td><textarea class="form-control"
+							ng-model="applicationForm.descriptionPreviousExperience"></textarea></td>
+					</tr>
+					<tr>
+						<td><label>Describe your interest about our brand</label></td>
+						<td><textarea class="form-control"
+							ng-model="applicationForm.descriptionInterestAboutOurBrand"></textarea></td>
+					</tr>
+					<tr>
+						<td><label>Planned investment amount in USD</label></td>
+						<td><input class="form-control" type="number"
+							ng-model="applicationForm.investmentAmountInUSD" required/></td>
+					</tr>
+					<tr>
+						<td><label>In which geographical areas would you like to operate</label></td>
+						<td><select multiple class="form-control"
+							ng-model="applicationForm.geographicalAreasToOperate" ng-options="region for region in regions" required></select></td>
+						<!-- <td><textarea class="form-control"
+							ng-model="applicationForm.geographicalAreasToOperate"></textarea></td> -->
+					</tr>
+					<tr>
+						<td><label>Additional Notes</label></td>
+						<td><textarea class="form-control"
+								ng-model="applicationForm.additionalNotes"></textarea></td>
+					</tr>
+
+				</table>
+				<input type="submit" class="btn btn-primary" ng-click="applicationForm.$valid && submitApplication()" value="Submit
+					Application"/>
+					<label>{{message}}</label>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

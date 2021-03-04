@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Franchise Application</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+<script src="/js/app.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body ng-app="FranchiseApplicationForm"
+	ng-controller="ApplicationFormController">
+	<div class="container">
+		<h1>Franchise Application</h1>
+		<a class="btn btn-primary" href="/" role="button">Create
+			Application</a> <a class="btn btn-primary" href="/applications"
+			role="button">View Applications</a>
+		<div ng-init="retrieveApplication()">
+		<div>{{message}}</div>
+			<table class="table table-striped table-bordered">
+			<tbody>
+				<tr>
+					<td><label>Applicants Name</label></td>
+					<td>{{application.applicantsName}}</td>
+				</tr>
+				<tr>
+					<td><label>ID Number</label></td>
+					<td>{{application.idNumber}}</td>
+				</tr>
+				<tr>
+					<td><label>Birth Date</label></td>
+					<td>{{application.birthDate}}</td>
+				</tr>
+				<tr>
+					<td><label>Contact Address</label></td>
+					<td>{{application.contactAddress}}</td>
+				</tr>
+				<tr>
+					<td><label>Contact Phone</label></td>
+					<td>{{application.contactPhone}}</td>
+				</tr>
+				<tr>
+					<td><label>Contact Email</label></td>
+					<td>{{application.contactEmail}}</td>
+				</tr>
+				<tr>
+					<td><label>Describe your previous experience about
+							Food & Beverage business</label></td>
+					<td>{{application.descriptionPreviousExperience}}</td>
+				</tr>
+				<tr>
+					<td><label>Describe your interest about our brand</label></td>
+					<td>{{application.descriptionInterestAboutOurBrand}}</td>
+				</tr>
+				<tr>
+					<td><label>Planned investment amount in USD</label></td>
+					<td>{{application.investmentAmountInUSD}}</td>
+				</tr>
+				<tr>
+					<td><label>In which geographical areas would you like
+							to operate</label></td>
+					<td>
+						<li ng-repeat="region in application.geographicalAreasToOperate">{{region}}</li>
+					</td>
+				</tr>
+				<tr>
+					<td><label>Additional Notes</label></td>
+					<td>{{application.additionalNotes}}</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
